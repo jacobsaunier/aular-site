@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "createdAt": "2026-11-19T19:43:03.264Z",
+        "reason": "PRODUCT.md: Instrument Sans is a binding brand commitment (not an AI-default pick)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "datenschutz.html"
+        ],
+        "createdAt": "2026-11-19T19:44:01.807Z",
+        "reason": "Playwright-Messung 390px und 1280px: .prose hat 22px bzw. 44px Innenabstand links und rechts, Kinder sitzen exakt dort; Detector-Fehlalarm, Agent-Messung, nicht vom Nutzer bestätigt"
+      }
+    ]
+  }
+}
