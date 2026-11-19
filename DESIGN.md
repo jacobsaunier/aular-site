@@ -12,7 +12,6 @@ colors:
   ozeanblau-tief: "#075985"
   platzhalter-bg: "#fff3bf"
   platzhalter-text: "#5c4400"
-  platzhalter-rand: "#e0c85a"
 typography:
   display:
     fontFamily: "Instrument Sans, system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
@@ -47,7 +46,6 @@ rounded:
   sm: "6px"
   md: "10px"
   store: "14px"
-  banner: "12px"
   lg: "18px"
   full: "50%"
 spacing:
@@ -72,11 +70,6 @@ components:
     textColor: "{colors.karte-weiss}"
     rounded: "{rounded.full}"
     size: "36px"
-  draft-banner:
-    backgroundColor: "{colors.platzhalter-bg}"
-    textColor: "{colors.platzhalter-text}"
-    rounded: "{rounded.banner}"
-    padding: "12px 16px"
   nav-link:
     textColor: "{colors.hallenboden-navy}"
     typography: "{typography.body}"
@@ -116,7 +109,7 @@ Zurückhaltende Palette: ein kühles Papier, ein dunkles Navy, ein Akzentblau, d
 - **Papierlicht** (#ededf5): Seitenhintergrund.
 - **Karte Weiß** (#ffffff): Karten und Textblöcke.
 - **Linie** (#d6d7e3): feine Trennlinie über dem Footer.
-- **Platzhalter-Gelb** (#fff3bf / Text #5c4400 / Rand #e0c85a): nur für Redaktions-Platzhalter und Entwurfsbanner, bewusst auffällig; darf nie live ungefüllt stehen.
+- **Platzhalter-Gelb** (#fff3bf / Text #5c4400): nur für Redaktions-Platzhalter und Entwurfsbanner, bewusst auffällig; darf nie live ungefüllt stehen.
 
 ### Named Rules
 **The One Voice Rule.** Ozeanblau ist die einzige Akzentfarbe. Es markiert Marke und Orientierung, nie großflächige Dekoration.
@@ -152,7 +145,7 @@ Rein tonal, ohne Schatten. Weiße Karten auf Papierlicht und Navy-Flächen auf P
 
 ## Shapes
 
-Weich, aber nicht verspielt: Karten 18px, Store-Badges 14px, Entwurfsbanner 12px, Überspringen-Link 10px, Fokusring 6px, Nummern-Badges kreisrund. Die Rundung wächst mit der Fläche. Rahmen werden nur an zwei Stellen verwendet: die Trennlinie über dem Footer und die 1px-Kontur des Entwurfsbanners.
+Weich, aber nicht verspielt: Karten 18px, Store-Badges 14px, Überspringen-Link 10px, Fokusring 6px, Nummern-Badges kreisrund. Die Rundung wächst mit der Fläche. Rahmen werden nicht verwendet; die einzige Linie ist die Trennlinie über dem Footer.
 
 ## Components
 
@@ -172,9 +165,6 @@ Weich, aber nicht verspielt: Karten 18px, Store-Badges 14px, Entwurfsbanner 12px
 
 ### Etiketten (Tags)
 - Versalien-Label in Ozeanblau über dem Kartentitel, ohne Hintergrund.
-
-### Entwurfsbanner
-- Redaktioneller Hinweis oben auf der Datenschutzseite: Platzhalter-Gelb mit Text #5c4400, 1px-Kontur #e0c85a, 12px Rundung, Padding 12px 16px, Gewicht 600, max. 820px breit. Muss vor Veröffentlichung entfernt werden.
 
 ### Navigation
 - Wortmarke "aular." fett, 1.6rem, -0.03em; der Punkt in Ozeanblau. Navigationslinks 600 / 0.97rem, Navy, ohne Unterstreichung; Hover und aktuelle Seite in Ozeanblau. Mobil umbrechend, kleinerer Abstand (16px).
