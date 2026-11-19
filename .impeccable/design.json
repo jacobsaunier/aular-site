@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T20:30:00Z",
+  "title": "Design System: Aular",
+  "extensions": {
+    "colorMeta": {
+      "hallenboden-navy": { "role": "neutral", "displayName": "Hallenboden-Navy", "canonical": "#1e293b", "tonalRamp": ["#0b1019", "#131a27", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#e2e8f0"] },
+      "papierlicht": { "role": "neutral", "displayName": "Papierlicht", "canonical": "#ededf5", "tonalRamp": ["#8e8fa6", "#a4a5ba", "#b9bacc", "#cacbd9", "#d6d7e3", "#e2e3ec", "#ededf5", "#f7f7fb"] },
+      "ozeanblau": { "role": "primary", "displayName": "Ozeanblau", "canonical": "#0369a1", "tonalRamp": ["#082f49", "#0c4a6e", "#075985", "#0369a1", "#0284c7", "#0ea5e9", "#7dd3fc", "#e0f2fe"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "H1 im Hero." },
+      "headline": { "displayName": "Headline", "purpose": "H2 der Abschnitte." },
+      "title": { "displayName": "Title", "purpose": "H3 in Karten." },
+      "body": { "displayName": "Body", "purpose": "Fließtext und Leads." },
+      "label": { "displayName": "Label", "purpose": "Karten-Etiketten in Versalien." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "scroll-smooth", "value": "scroll-behavior: smooth", "purpose": "Sanftes Springen zu Ankern; bei prefers-reduced-motion aus." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Store-Badge",
+      "kind": "button",
+      "refersTo": "store-badge",
+      "description": "Deaktiviertes App-Store-Badge, solange die App nicht erschienen ist.",
+      "html": "<a class=\"ds-store\"><small>Bald im</small><strong>App Store</strong></a>",
+      "css": ".ds-store { display: inline-flex; flex-direction: column; min-width: 190px; padding: 12px 20px; border-radius: 14px; background: #1e293b; color: #fff; text-decoration: none; line-height: 1.25; opacity: 0.6; cursor: default; } .ds-store small { font-size: 0.74rem; opacity: 0.78; letter-spacing: 0.04em; } .ds-store strong { font-size: 1.05rem; }"
+    },
+    {
+      "name": "Feature-Karte",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Weiße Karte mit Etikett, Titel und kurzem Text.",
+      "html": "<article class=\"ds-card\"><span class=\"ds-tag\">Events</span><h3>Sport-Events für jede Sportart</h3><p>Datum, Uhrzeit, Ort und Teilnehmerzahl auf einen Blick.</p></article>",
+      "css": ".ds-card { background: #fff; border-radius: 18px; padding: 24px; color: #1e293b; font-family: 'Instrument Sans', system-ui, sans-serif; } .ds-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0369a1; margin-bottom: 10px; } .ds-card h3 { margin: 0 0 6px; font-size: 1.15rem; letter-spacing: -0.01em; } .ds-card p { margin: 0; color: #475569; }"
+    },
+    {
+      "name": "Schritt-Badge",
+      "kind": "custom",
+      "refersTo": "step-badge",
+      "description": "Nummerierter Kreis über Schrittkarten.",
+      "html": "<span class=\"ds-step\">1</span>",
+      "css": ".ds-step { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #0369a1; color: #fff; font-weight: 700; font-family: 'Instrument Sans', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Wortmarke mit blauem Punkt und Textlinks.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">aular<span>.</span></a><a href=\"#\">So funktioniert's</a><a href=\"#\">Funktionen</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 22px; align-items: center; font-family: 'Instrument Sans', system-ui, sans-serif; } .ds-nav a { color: #1e293b; text-decoration: none; font-weight: 600; font-size: 0.97rem; } .ds-nav a:hover { color: #0369a1; } .ds-nav a:focus-visible { outline: 3px solid #0369a1; outline-offset: 3px; border-radius: 6px; } .ds-nav .ds-brand { font-weight: 700; font-size: 1.6rem; letter-spacing: -0.03em; } .ds-brand span { color: #0369a1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Das Campus-Schwarze-Brett",
+    "overview": "Aular wirkt wie ein gut gepflegtes Schwarzes Brett an der Hochschule: helle, kühle Fläche, darauf klar abgegrenzte weiße Karten, jede mit einer einzigen Aussage. Nichts schreit. Der Ton ist sachlich, nahbar und studentisch, ohne Sport-Pathos und ohne Start-up-Glanz. Das Hallenboden-Navy gibt Halt, das Ozeanblau markiert, was zählt.",
+    "keyCharacteristics": [
+      "Flach und tonal geschichtet: keine Schatten, keine Verläufe.",
+      "Ein Akzent (Ozeanblau) für Marke, Links, Etiketten und Nummern.",
+      "Großzügig gerundete Karten (18px), straffe, enge Überschriften.",
+      "Eine Schrift in drei Gewichten (400, 600, 700), selbst gehostet.",
+      "Alle Interaktionsflächen und Texte bleiben auf Papierlicht oder Weiß lesbar."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Ozeanblau ist die einzige Akzentfarbe. Es markiert Marke und Orientierung, nie großflächige Dekoration.", "section": "colors" },
+      { "name": "The Paper Rule", "body": "Der Seitengrund ist immer Papierlicht, nie reines Weiß. Weiß gehört den Karten.", "section": "colors" },
+      { "name": "The Three Weights Rule", "body": "Nur 400, 600 (Navigation) und 700 (alles Betonte). Keine weiteren Gewichte, keine zweite Familie.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Keine box-shadow und kein Verlauf. Trennung durch Tonwert, Abstand oder die eine Footer-Linie.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do Karten in Weiß (#ffffff) auf Papierlicht (#ededf5) setzen und 18px runden.",
+      "Do Ozeanblau (#0369a1) sparsam für Marke, Links, Etiketten und Nummern einsetzen.",
+      "Do Überschriften eng (−0.025 bis −0.035em) und fett (700) setzen.",
+      "Do Instrument Sans selbst hosten und keine externen Schriften laden.",
+      "Do prefers-reduced-motion respektieren und Bewegung minimal halten."
+    ],
+    "donts": [
+      "Don't Schatten, Verläufe oder Glas-Effekte einführen.",
+      "Don't weitere Akzentfarben, Fotos von Nutzern oder erfundene Zahlen und Bewertungen einsetzen (PRODUCT.md).",
+      "Don't eine zweite Schriftfamilie oder weitere Gewichte hinzufügen.",
+      "Don't Store-Badges wie Links aussehen oder funktionieren lassen, bevor die App erschienen ist.",
+      "Don't Platzhalter-Gelb auf einer veröffentlichten Seite stehen lassen."
+    ]
+  }
+}
