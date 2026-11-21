@@ -28,7 +28,7 @@ The app is not yet released. Store entries are "Bald im App Store" / "Bald bei G
 
 ## Capabilities and Constraints
 
-Confirmed app functions the site describes: sport events (image, date, time, place, participant count, optional participation approval); invite students by username; connect in person via QR code; Campus Moments (post-event photo shared with the hochschule); event chat; report and block profiles; hosts can remove participants; minimum age 18. Contacts: hallo@aular-app.de, support@aular-app.de. Language: German, informal "du" in marketing copy; legal pages stay formally correct. The slogan "Connect your campus" may be English, everything else stays German. No third-party requests (self-hosted fonts, no analytics or trackers), matching the privacy policy.
+Confirmed app functions the site describes: sport events (image, date, time, place, participant count, optional participation approval); invite students by username; connect in person via QR code; Campus Moments (post-event photo shared with the hochschule); event chat; report and block profiles; hosts can remove participants; minimum age 18. Contacts: hallo@aular-app.de, support@aular-app.de. Language: German, informal "du" in marketing copy; legal pages stay formally correct. The headline may be English, everything else stays German. No third-party requests (self-hosted fonts, no analytics or trackers), matching the privacy policy.
 
 ## Brand Commitments
 

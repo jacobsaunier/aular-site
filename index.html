@@ -5,44 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Aular – Sport verbindet Studierende</title>
   <meta name="description" content="Aular bringt Studierende über gemeinsamen Sport zusammen: Events finden oder erstellen, mitmachen, Leute kennenlernen.">
-  <meta name="theme-color" content="#1e293b">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="preload" href="fonts/instrument-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="index.html" aria-label="Aular – Startseite">aular<span>.</span></a>
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a href="#kontakt">Kontakt</a>
-        <!-- <a href="studie.html">Studie</a> -->
-      </nav>
+      <a class="brand" href="index.html" aria-label="Aular – Startseite">
+        <img src="img/logo.png" width="32" height="32" alt="">
+        Aular
+      </a>
     </div>
   </header>
 
   <main id="inhalt">
-    <div class="hero">
-      <div class="wrap">
-        <p class="status-label">Wird an der MSH Hamburg getestet</p>
-        <h1>Aular</h1>
-        <p class="tagline" lang="en">Connect your campus.</p>
+    <div class="wrap">
+      <div class="hero">
+        <h1 lang="en">UNI-APP FOR STUDENTS THAT WANNA <span class="grau">CONNECT OFF CAMPUS.</span></h1>
+        <p class="status">Wird an der MSH Hamburg getestet</p>
         <div class="soon-row">
-          <span class="soon" aria-label="Bald im App Store"><small>Bald im</small><strong>App Store</strong></span>
-          <span class="soon" aria-label="Bald bei Google Play"><small>Bald bei</small><strong>Google Play</strong></span>
+          <span class="soon" aria-label="Bald im App Store">Bald im App Store</span>
+          <span class="soon" aria-label="Bald bei Google Play">Bald bei Google Play</span>
         </div>
       </div>
+
+      <section aria-labelledby="h-warum">
+        <div class="split">
+          <div class="three">
+            <div class="step">
+              <div class="dot" style="background:var(--gruen)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10a3 3 0 013 3v13H8a3 3 0 01-3-3z"/><path d="M9 8h5"/></svg></div>
+              <p class="titel">Guide</p>
+              <p>Dein Start in Hamburg: Sportarten, Orte und Anlaufstellen für Erstis. Kommt bald.</p>
+            </div>
+            <div class="step">
+              <div class="dot" style="background:var(--blau)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 3h6v3H9zM9 11h6M9 15h4"/></svg></div>
+              <p class="titel">Studie</p>
+              <p>Aular wird wissenschaftlich begleitet. Details erhältst du vor der Teilnahme.</p>
+            </div>
+            <div class="step">
+              <div class="dot" style="background:var(--korall)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/></svg></div>
+              <p class="titel">Sicherheit</p>
+              <p>Profile melden und blockieren. Gastgeber können Teilnehmende entfernen. Kein Austausch von Telefonnummern nötig.</p>
+            </div>
+          </div>
+          <div>
+            <span class="tag">Warum Aular</span>
+            <h2 id="h-warum">Sport ist der einfachste Anlass.</h2>
+            <p class="story">Am Anfang kennt man kaum jemanden. Beim Sport kommt man ohne große Worte ins Gespräch. Aular bringt Events, Einladungen und Kennenlernen an einen Ort, an deiner Hochschule und in deiner Stadt.</p>
+          </div>
+        </div>
+      </section>
     </div>
-
-    <section id="warum" aria-labelledby="h-warum">
-      <div class="wrap">
-        <h2 id="h-warum">Warum es Aular gibt</h2>
-        <p class="story">Am Anfang an einer neuen Hochschule kennt man kaum jemanden. Sport ist der einfachste Anlass, Leute kennenzulernen, aber Gruppenchats voller Unbekannter machen es unnötig kompliziert. Aular bringt das an einen Ort: Events finden oder erstellen, mitmachen oder einladen, gemeinsam bewegen.</p>
-      </div>
-    </section>
-
   </main>
 
   <footer class="site-footer" id="kontakt">
