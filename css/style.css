@@ -94,11 +94,22 @@ a { color: inherit; text-underline-offset: 3px; }
 .nav a:hover { background: var(--flaeche); }
 
 /* Startseite: Opener */
-.hero { padding: 40px 0 8px; display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  grid-template-areas: "kopf telefon" "karten telefon";
+  grid-template-rows: auto auto;
+  column-gap: 48px;
+  align-content: center;
+  padding-top: 40px;
+}
+.hero { grid-area: kopf; }
+.stage > section { grid-area: karten; }
+.stage > .phone { grid-area: telefon; align-self: center; }
 h1 {
   margin: 0;
   max-width: 13em;
-  font-size: clamp(2rem, 4.6vw, 4rem);
+  font-size: clamp(2rem, 6.4vw, 4.8rem);
   line-height: 0.98;
   letter-spacing: -0.035em;
   font-weight: 800;
@@ -109,7 +120,7 @@ h1 .grau { color: var(--ink-grau); }
 
 /* Abschnitte */
 section { padding: 72px 0 0; }
-.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.three { display: grid; grid-template-columns: repeat(3, minmax(0, 200px)); gap: 12px; }
 .step {
   border-radius: 22px;
   padding: 20px;
@@ -165,7 +176,7 @@ h2 {
   top: 8px;
   left: 8px;
   right: 8px;
-  height: 32px;
+  height: 48px;
   border-radius: 38px 38px 0 0;
   background: var(--top);
 }
@@ -176,6 +187,10 @@ h2 {
   aspect-ratio: 600 / 1208;
   border-radius: 0 0 38px 38px;
   background: var(--flaeche);
+  position: relative;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
 }
 .phone-body video { display: block; }
 .phone-body .phone-poster { display: none; }
@@ -188,7 +203,7 @@ h2 {
   transform: translateX(-50%);
   border-radius: 999px;
   background: #0f172a;
-  z-index: 1;
+  z-index: 2;
 }
 @media (prefers-reduced-motion: reduce) {
   .phone-body video { display: none; }
@@ -232,7 +247,14 @@ h2 {
 .site-footer nav a { display: inline-flex; align-items: center; min-height: 44px; margin-right: 16px; }
 
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; gap: 32px; }
+  .stage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "kopf" "telefon" "karten";
+    row-gap: 32px;
+    padding-top: 0;
+  }
+  .stage > .phone { align-self: start; }
+  .stage > section { padding-top: 24px; }
   .three { grid-template-columns: 1fr; }
   .step { min-height: 0; }
   .phone { width: 260px; }
