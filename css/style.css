@@ -156,13 +156,25 @@ h2 {
   padding: 40px 8px 8px;
   border-radius: 46px;
   background: #0f172a;
+  --top: #1c2632;
+}
+/* oberer Bereich: nimmt die Hintergrundfarbe des Videos an (js/phone.js) */
+.phone-body::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  height: 32px;
+  border-radius: 38px 38px 0 0;
+  background: var(--top);
 }
 .phone-body video,
 .phone-body .phone-poster {
   width: 100%;
   height: auto;
   aspect-ratio: 600 / 1208;
-  border-radius: 38px;
+  border-radius: 0 0 38px 38px;
   background: var(--flaeche);
 }
 .phone-body video { display: block; }
@@ -175,7 +187,8 @@ h2 {
   height: 18px;
   transform: translateX(-50%);
   border-radius: 999px;
-  background: #273449;
+  background: #0f172a;
+  z-index: 1;
 }
 @media (prefers-reduced-motion: reduce) {
   .phone-body video { display: none; }
