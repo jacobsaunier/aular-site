@@ -93,15 +93,17 @@ a { color: inherit; text-underline-offset: 3px; }
 }
 .nav a:hover { background: var(--flaeche); }
 
-/* Startseite: Opener */
+/* Startseite: feste Anordnung wie am Laptop. Alle Maße hängen an --u und
+   schrumpfen auf schmalen Bildschirmen im gleichen Verhältnis mit. */
 .stage {
+  --u: min(1px, calc((100vw - 56px) / 1080));
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
+  grid-template-columns: minmax(0, 1fr) calc(300 * var(--u));
   grid-template-areas: "kopf telefon" "karten telefon";
   grid-template-rows: auto auto;
-  column-gap: 48px;
+  column-gap: calc(48 * var(--u));
   align-content: center;
-  padding-top: 40px;
+  padding-top: calc(40 * var(--u));
 }
 .hero { grid-area: kopf; }
 .stage > section { grid-area: karten; }
@@ -109,22 +111,24 @@ a { color: inherit; text-underline-offset: 3px; }
 h1 {
   margin: 0;
   max-width: 13em;
-  font-size: clamp(2rem, 6.4vw, 4.8rem);
+  font-size: 4.8rem;
   line-height: 0.98;
   letter-spacing: -0.035em;
   font-weight: 800;
   text-transform: uppercase;
   text-wrap: balance;
 }
+.stage h1 { font-size: calc(76.8 * var(--u)); }
 h1 .grau { color: var(--ink-grau); }
 
 /* Abschnitte */
 section { padding: 72px 0 0; }
-.three { display: grid; grid-template-columns: repeat(3, minmax(0, 200px)); gap: 12px; }
+.stage > section { padding-top: calc(72 * var(--u)); }
+.three { display: grid; grid-template-columns: repeat(3, calc(200 * var(--u))); gap: calc(12 * var(--u)); }
 .step {
-  border-radius: 22px;
-  padding: 20px;
-  min-height: 260px;
+  border-radius: calc(22 * var(--u));
+  padding: calc(20 * var(--u));
+  min-height: calc(260 * var(--u));
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -133,24 +137,24 @@ section { padding: 72px 0 0; }
 .step:nth-child(2) { background: var(--blau-hell); }
 .step:nth-child(3) { background: var(--korall-hell); }
 .dot {
-  width: 44px;
-  height: 44px;
+  width: calc(44 * var(--u));
+  height: calc(44 * var(--u));
   border-radius: 50%;
   display: grid;
   place-items: center;
-  margin-bottom: 14px;
+  margin-bottom: calc(14 * var(--u));
 }
 .dot svg {
-  width: 22px;
-  height: 22px;
+  width: 50%;
+  height: 50%;
   stroke: #fff;
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.titel { margin: 0 0 4px; font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
-.step p:not(.titel) { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+.titel { margin: 0 0 calc(4 * var(--u)); font-size: calc(16.8 * var(--u)); font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
+.step p:not(.titel) { margin: 0; font-size: calc(14.4 * var(--u)); color: var(--ink-soft); }
 h2 {
   margin: 0 0 16px;
   font-size: clamp(1.7rem, 4.2vw, 2.5rem);
@@ -161,11 +165,11 @@ h2 {
 }
 
 /* Telefon-Mockup mit Demo-Video */
-.phone { margin: 0; width: 300px; }
+.phone { margin: 0; width: calc(300 * var(--u)); }
 .phone-body {
   position: relative;
-  padding: 40px 8px 8px;
-  border-radius: 46px;
+  padding: calc(40 * var(--u)) calc(8 * var(--u)) calc(8 * var(--u));
+  border-radius: calc(46 * var(--u));
   background: #0f172a;
   --top: #1c2632;
 }
@@ -173,11 +177,11 @@ h2 {
 .phone-body::before {
   content: "";
   position: absolute;
-  top: 8px;
-  left: 8px;
-  right: 8px;
-  height: 48px;
-  border-radius: 38px 38px 0 0;
+  top: calc(8 * var(--u));
+  left: calc(8 * var(--u));
+  right: calc(8 * var(--u));
+  height: calc(48 * var(--u));
+  border-radius: calc(38 * var(--u)) calc(38 * var(--u)) 0 0;
   background: var(--top);
 }
 .phone-body video,
@@ -185,21 +189,21 @@ h2 {
   width: 100%;
   height: auto;
   aspect-ratio: 600 / 1208;
-  border-radius: 0 0 38px 38px;
+  border-radius: 0 0 calc(38 * var(--u)) calc(38 * var(--u));
   background: var(--flaeche);
   position: relative;
   z-index: 1;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 calc(14 * var(--u)));
+  mask-image: linear-gradient(to bottom, transparent 0, #000 calc(14 * var(--u)));
 }
 .phone-body video { display: block; }
 .phone-body .phone-poster { display: none; }
 .island {
   position: absolute;
-  top: 12px;
+  top: calc(12 * var(--u));
   left: 50%;
   width: 30%;
-  height: 18px;
+  height: calc(18 * var(--u));
   transform: translateX(-50%);
   border-radius: 999px;
   background: #0f172a;
@@ -247,16 +251,5 @@ h2 {
 .site-footer nav a { display: inline-flex; align-items: center; min-height: 44px; margin-right: 16px; }
 
 @media (max-width: 760px) {
-  .stage {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "kopf" "telefon" "karten";
-    row-gap: 32px;
-    padding-top: 0;
-  }
-  .stage > .phone { align-self: start; }
-  .stage > section { padding-top: 24px; }
-  .three { grid-template-columns: 1fr; }
-  .step { min-height: 0; }
-  .phone { width: 260px; }
   .nav a { padding: 0 10px; }
 }
