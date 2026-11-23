@@ -106,18 +106,6 @@ h1 {
   text-wrap: balance;
 }
 h1 .grau { color: var(--ink-grau); }
-.status { margin: 28px 0 0; font-size: 0.95rem; color: var(--ink-soft); }
-.soon-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.soon {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--grund);
-  color: var(--ink);
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1.3;
-}
 
 /* Abschnitte */
 section { padding: 72px 0 0; }
