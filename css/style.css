@@ -109,15 +109,7 @@ h1 .grau { color: var(--ink-grau); }
 
 /* Abschnitte */
 section { padding: 72px 0 0; }
-.tag {
-  display: inline-block;
-  padding: 6px 14px;
-  border: 1px solid #d9dce4;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  margin-bottom: 20px;
-}
-.split { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; }
+.split { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: start; }
 .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .step {
   border-radius: 22px;
@@ -157,7 +149,26 @@ h2 {
   font-weight: 600;
   text-wrap: balance;
 }
-.story { margin: 0; font-size: 1.15rem; }
+
+/* iPhone 16 mit App-Screenshot */
+.phone { margin: 0; justify-self: center; width: min(100%, 340px); }
+.phone-body {
+  position: relative;
+  padding: 10px;
+  border-radius: 54px;
+  background: #0f172a;
+}
+.phone-body img { display: block; width: 100%; height: auto; border-radius: 44px; }
+.island {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  width: 32%;
+  height: 26px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #000;
+}
 
 /* Textseiten (Impressum, Datenschutz) */
 .page { padding-block: 24px 56px; }
@@ -200,5 +211,6 @@ h2 {
   .split { grid-template-columns: 1fr; }
   .three { grid-template-columns: 1fr; }
   .step { min-height: 0; }
+  .phone { width: min(100%, 300px); }
   .nav a { padding: 0 10px; }
 }
