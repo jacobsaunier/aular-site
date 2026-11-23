@@ -94,11 +94,11 @@ a { color: inherit; text-underline-offset: 3px; }
 .nav a:hover { background: var(--flaeche); }
 
 /* Startseite: Opener */
-.hero { padding: 72px 0 8px; }
+.hero { padding: 40px 0 8px; display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
 h1 {
   margin: 0;
   max-width: 13em;
-  font-size: clamp(2rem, 6.4vw, 4.8rem);
+  font-size: clamp(2rem, 4.6vw, 4rem);
   line-height: 0.98;
   letter-spacing: -0.035em;
   font-weight: 800;
@@ -109,7 +109,6 @@ h1 .grau { color: var(--ink-grau); }
 
 /* Abschnitte */
 section { padding: 72px 0 0; }
-.split { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: start; }
 .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .step {
   border-radius: 22px;
@@ -150,24 +149,38 @@ h2 {
   text-wrap: balance;
 }
 
-/* iPhone 16 mit App-Screenshot */
-.phone { margin: 0; justify-self: center; width: min(100%, 340px); }
+/* Telefon-Mockup mit Demo-Video */
+.phone { margin: 0; width: 300px; }
 .phone-body {
   position: relative;
-  padding: 10px;
-  border-radius: 54px;
+  padding: 8px;
+  border-radius: 46px;
   background: #0f172a;
 }
-.phone-body img { display: block; width: 100%; height: auto; border-radius: 44px; }
+.phone-body video,
+.phone-body .phone-poster {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 1208;
+  border-radius: 38px;
+  background: var(--flaeche);
+}
+.phone-body video { display: block; }
+.phone-body .phone-poster { display: none; }
 .island {
   position: absolute;
-  top: 22px;
+  top: 18px;
   left: 50%;
-  width: 32%;
-  height: 26px;
+  width: 30%;
+  height: 22px;
   transform: translateX(-50%);
   border-radius: 999px;
-  background: #000;
+  background: #0f172a;
+  z-index: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .phone-body video { display: none; }
+  .phone-body .phone-poster { display: block; }
 }
 
 /* Textseiten (Impressum, Datenschutz) */
@@ -207,10 +220,9 @@ h2 {
 .site-footer nav a { display: inline-flex; align-items: center; min-height: 44px; margin-right: 16px; }
 
 @media (max-width: 760px) {
-  .hero { padding-top: 40px; }
-  .split { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; gap: 32px; }
   .three { grid-template-columns: 1fr; }
   .step { min-height: 0; }
-  .phone { width: min(100%, 300px); }
+  .phone { width: 260px; }
   .nav a { padding: 0 10px; }
 }
