@@ -126,6 +126,7 @@ section { padding: 72px 0 0; }
 .stage > section { padding-top: calc(72 * var(--u)); }
 .three { display: grid; grid-template-columns: repeat(3, calc(200 * var(--u))); gap: calc(12 * var(--u)); }
 .step {
+  position: relative;
   color: inherit;
   text-decoration: none;
   border-radius: calc(22 * var(--u));
@@ -247,7 +248,6 @@ h2 {
   html.startseite { scroll-snap-type: y proximity; }
   .startseite .site-header { scroll-snap-align: start; }
   .stage { min-height: calc(100svh - 76px); }
-  .startseite .site-footer { scroll-snap-align: end; }
 }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
@@ -264,7 +264,7 @@ h2 {
   justify-content: center;
 }
 @media (min-width: 1160px) { .guide-seite { padding-inline: calc((100% - 1080px) / 2); } }
-@media (max-width: 760px) { .guide-seite { display: none; } }
+@media (max-width: 760px) { .guide-seite { min-height: 0; padding-block: 48px; display: block; } }
 .guide-seite h2 { font-size: clamp(2.2rem, 6vw, 4rem); margin: 0; line-height: 1; letter-spacing: -0.035em; font-weight: 800; text-transform: uppercase; }
 .guide-seite .guide-kopf { padding: 0 0 32px; }
 .guide-sub { margin: 10px 0 0; font-size: 1.15rem; line-height: 1.3; color: var(--ink-soft); white-space: nowrap; }
@@ -400,4 +400,36 @@ h2 {
   .stage > section { padding-top: 24px; }
   .three { grid-template-columns: 1fr; }
   .step { min-height: 0; }
+}
+
+/* Pfeil an klickbaren Karten */
+.pfeil {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--ink);
+}
+a.step:hover .pfeil, a.step:focus-visible .pfeil { transform: translateX(3px); }
+@media (prefers-reduced-motion: no-preference) { .pfeil { transition: transform .15s; } }
+a.step:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* Studie-Bereich */
+#guide, #studie { scroll-margin-top: 16px; }
+.studie-seite {
+  background: var(--blau-hell);
+  padding: 48px 20px 56px;
+}
+@media (min-width: 1160px) { .studie-seite { padding-inline: calc((100% - 1080px) / 2); } }
+.studie-text { max-width: 54rem; }
+.studie-seite h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1; letter-spacing: -0.035em; font-weight: 800; text-transform: uppercase; }
+.studie-einl { margin: 20px 0 0; font-size: 1.25rem; line-height: 1.45; color: var(--ink); }
+.studie-seite h3 { margin: 24px 0 6px; font-size: 1.15rem; font-weight: 700; }
+.studie-seite p { margin: 0; font-size: 1.05rem; line-height: 1.6; color: var(--ink-soft); }
+.studie-seite p.studie-einl { margin-top: 20px; color: var(--ink); }
+
+@media (max-width: 760px) {
+  .guide-seite .guide-sub { white-space: normal; }
+  .guide-seite .karte { padding: 18px 20px; }
 }
