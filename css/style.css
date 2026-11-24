@@ -480,3 +480,36 @@ a.step:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
   .startseite .site-footer { padding: 8px 0 10px; font-size: 0.85rem; }
   .startseite .site-footer .wrap { gap: 0 24px; }
 }
+
+/* Handy: kürzere Strecke (Critique P1) */
+@media (max-width: 760px) {
+  .step {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 14px;
+    align-items: start;
+    padding: 16px 48px 16px 16px;
+    border-radius: 18px;
+  }
+  .step .dot { grid-row: 1 / span 2; margin: 0; }
+  .step .titel { margin: 2px 0 2px; }
+  .step .pfeil { top: 50%; bottom: auto; right: 16px; transform: translateY(-50%); }
+  a.step:hover .pfeil, a.step:focus-visible .pfeil { transform: translate(3px, -50%); }
+  .three { gap: 10px; }
+  .guide-seite { padding-block: 32px; }
+  .guide-seite .guide-grid { gap: 10px; }
+  .guide-seite .karte {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    column-gap: 14px;
+    align-items: start;
+    padding: 16px;
+    border-radius: 18px;
+  }
+  .guide-seite .karte .dot { grid-row: 1 / span 2; width: 36px; height: 36px; margin: 0; }
+  .guide-seite .karte-titel { margin: 2px 0 4px; }
+  .plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .plan-karte { padding: 14px; border-radius: 16px; }
+  .studie-seite { padding-block: 32px 36px; }
+  .studie-seite h3 { margin-top: 28px; }
+}
