@@ -126,6 +126,8 @@ section { padding: 72px 0 0; }
 .stage > section { padding-top: calc(72 * var(--u)); }
 .three { display: grid; grid-template-columns: repeat(3, calc(200 * var(--u))); gap: calc(12 * var(--u)); }
 .step {
+  color: inherit;
+  text-decoration: none;
   border-radius: calc(22 * var(--u));
   padding: calc(20 * var(--u));
   min-height: calc(260 * var(--u));
@@ -214,6 +216,40 @@ h2 {
   .phone-body .phone-poster { display: block; }
 }
 
+
+/* Seiten unter dem Start: je eine Seite pro Karte (nur Laptop) */
+.seite {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+.seite-gruen { background: var(--gruen-hell); }
+.seite-blau { background: var(--blau-hell); }
+.seite-korall { background: var(--korall-hell); }
+.seite .dot { width: 56px; height: 56px; margin-bottom: 24px; }
+.seite h2 {
+  margin: 0 0 24px;
+  font-size: clamp(3rem, 9vw, 7rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.seite p { margin: 0; max-width: 28em; font-size: 1.5rem; line-height: 1.4; color: var(--ink-soft); }
+@media (min-width: 761px) {
+  html { scroll-snap-type: y proximity; }
+  .site-header { scroll-snap-align: start; }
+  .stage { min-height: calc(100svh - 76px); }
+  .site-footer { scroll-snap-align: end; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 /* Textseiten (Impressum, Datenschutz) */
 .page { padding-block: 24px 56px; }
 .page h1 {
@@ -252,4 +288,17 @@ h2 {
 
 @media (max-width: 760px) {
   .nav a { padding: 0 10px; }
+  /* Handy: nur Text und die drei Karten untereinander, keine Demo, keine Seiten darunter */
+  .stage {
+    --u: 1px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "kopf" "karten";
+    row-gap: 8px;
+    padding-top: 0;
+  }
+  .stage .phone, .seite { display: none; }
+  .stage h1 { font-size: clamp(2rem, 9vw, 3rem); }
+  .stage > section { padding-top: 24px; }
+  .three { grid-template-columns: 1fr; }
+  .step { min-height: 0; }
 }
