@@ -91,7 +91,7 @@ a { color: inherit; text-underline-offset: 3px; }
   font-size: 0.95rem;
   font-weight: 500;
 }
-.nav a:hover { background: var(--flaeche); }
+.nav a:hover, .nav a[aria-current="page"] { background: var(--flaeche); }
 
 /* Startseite: feste Anordnung wie am Laptop. Alle Maße hängen an --u und
    schrumpfen auf schmalen Bildschirmen im gleichen Verhältnis mit. */
@@ -244,14 +244,74 @@ h2 {
   .seite { padding-inline: calc((100% - 1080px) / 2); }
 }
 @media (min-width: 761px) {
-  html { scroll-snap-type: y proximity; }
-  .site-header { scroll-snap-align: start; }
+  html.startseite { scroll-snap-type: y proximity; }
+  .startseite .site-header { scroll-snap-align: start; }
   .stage { min-height: calc(100svh - 76px); }
-  .site-footer { scroll-snap-align: end; }
+  .startseite .site-footer { scroll-snap-align: end; }
 }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
+
+/* Guide-Seite */
+.guide-kopf { padding: 48px 0 32px; }
+.tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-grau);
+}
+.guide-kopf h1 { font-size: clamp(2.2rem, 6vw, 4rem); margin: 0; }
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.karte {
+  border-radius: 22px;
+  padding: 28px;
+  min-height: 260px;
+  cursor: default;
+}
+.karte-gruen { background: var(--gruen-hell); }
+.karte-blau { background: var(--blau-hell); }
+.karte-korall { background: var(--korall-hell); }
+.karte .dot, .seite .dot { --u: 1px; flex: none; }
+.karte .dot { margin-bottom: 18px; }
+.karte-titel { margin: 0 0 8px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+.karte p { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+.orte { padding: 72px 0 80px; }
+.orte h2 { margin: 0 0 6px; font-size: 1.25rem; font-weight: 700; }
+.orte-sub { margin: 0 0 16px; font-size: 0.95rem; color: var(--ink-soft); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid #c9d1dc;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.chip:hover { background: var(--flaeche); }
+.chip-an { background: var(--ink); border-color: var(--ink); color: #fff; }
+.chip-an:hover { background: var(--ink); }
+.orte-liste { margin-top: 16px; }
+.hinweis { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
+.orte-karten { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.ort { background: var(--flaeche); border-radius: 16px; padding: 16px; }
+.ort-kopf { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.ort-pruefen { font-size: 0.8rem; color: var(--ink-soft); }
+.ort p { margin: 4px 0 0; font-size: 0.95rem; color: var(--ink-soft); }
+.ort-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; }
+@media (max-width: 900px) { .guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .guide-grid { grid-template-columns: 1fr; } .karte { min-height: 0; } }
 
 /* Textseiten (Impressum, Datenschutz) */
 .page { padding-block: 24px 56px; }
