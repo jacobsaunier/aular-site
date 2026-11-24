@@ -264,6 +264,7 @@ h2 {
 @media (max-width: 760px) { .guide-seite { display: none; } }
 .guide-seite h2 { font-size: clamp(2.2rem, 6vw, 4rem); margin: 0; line-height: 1; letter-spacing: -0.035em; font-weight: 800; text-transform: uppercase; }
 .guide-seite .guide-kopf { padding: 0 0 32px; }
+.guide-sub { margin: 16px 0 0; max-width: 36em; font-size: 1.25rem; line-height: 1.4; color: var(--ink-soft); }
 .orte h3 { margin: 0 0 6px; font-size: 1.25rem; font-weight: 700; }
 
 /* Guide-Seite */
