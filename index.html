@@ -9,6 +9,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/phone.js" defer></script>
+  <script src="js/locations.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -19,10 +20,6 @@
         <img src="img/logo.png" width="32" height="32" alt="">
         Aular
       </a>
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a href="guide.html">Guide</a>
-        <!-- <a href="studie.html">Studie</a> -->
-      </nav>
     </div>
   </header>
 
@@ -34,7 +31,7 @@
 
       <section>
         <div class="three">
-            <a class="step" href="guide.html">
+            <a class="step" href="#guide">
               <div class="dot" style="background:var(--gruen)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10a3 3 0 013 3v13H8a3 3 0 01-3-3z"/><path d="M9 8h5"/></svg></div>
               <p class="titel">Guide</p>
               <p>So funktioniert Aular und wo du in Hamburg Sport machst.</p>
@@ -63,10 +60,59 @@
       </figure>
     </div>
 
-    <section class="seite seite-gruen" id="guide" aria-labelledby="h-guide">
-      <div class="dot" style="background:var(--gruen)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10a3 3 0 013 3v13H8a3 3 0 01-3-3z"/><path d="M9 8h5"/></svg></div>
-      <h2 id="h-guide">Guide</h2>
-      <p>Dein Start in Hamburg: Sportarten, Orte und Anlaufstellen für Erstis. Kommt bald.</p>
+    <section class="guide-seite" id="guide" aria-labelledby="h-guide">
+    <div class="guide-kopf">
+            <span class="tag">Guide</span>
+            <h2 id="h-guide">So funktioniert Aular</h2>
+          </div>
+
+          <div class="guide-grid">
+            <article class="karte karte-gruen">
+              <div class="dot" style="background:var(--gruen)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></div>
+              <h3 class="karte-titel">Feed</h3>
+              <p>Events entdecken. Hier findest du Sport-Verabredungen von anderen Studierenden und machst direkt mit oder fragst an, je nachdem, wie der Host es eingestellt hat.</p>
+            </article>
+            <article class="karte karte-blau">
+              <div class="dot" style="background:var(--blau)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></div>
+              <h3 class="karte-titel">Create</h3>
+              <p>Event erstellen. In wenigen Schritten: Sportart, Titel, Zeit, Treffpunkt und Details. Du entscheidest, ob alle direkt mitmachen dürfen oder du Anfragen bestätigst.</p>
+            </article>
+            <article class="karte karte-korall">
+              <div class="dot" style="background:var(--korall)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></div>
+              <h3 class="karte-titel">Inbox &amp; Chat</h3>
+              <p>Anfragen, Einladungen und Nachrichten an einem Ort. Zu jedem Event gibt es einen Chat für alle, die dabei sind.</p>
+            </article>
+            <article class="karte karte-gruen">
+              <div class="dot" style="background:var(--gruen)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></div>
+              <h3 class="karte-titel">Profil</h3>
+              <p>Dein Profil mit Name und Studiengang. Über deinen QR-Code verbindest du dich mit anderen, ohne Telefonnummern auszutauschen.</p>
+            </article>
+            <article class="karte karte-blau">
+              <div class="dot" style="background:var(--blau)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+              <h3 class="karte-titel">Campus Moments</h3>
+              <p>Teile Fotos von euren Events mit deiner Community.</p>
+            </article>
+            <article class="karte karte-korall">
+              <div class="dot" style="background:var(--korall)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+              <h3 class="karte-titel">Bewertung</h3>
+              <p>Nach einem Event kannst du bewerten, wie es war.</p>
+            </article>
+          </div>
+
+          <section class="orte" id="locations" aria-labelledby="h-locations">
+            <h3 id="h-locations">Locations</h3>
+            <p class="orte-sub">Beliebte Orte in Hamburg, nach Sportart.</p>
+            <div class="chips" role="group" aria-label="Sportart wählen" hidden>
+              <button type="button" class="chip" data-sport="Laufen" aria-expanded="false" aria-controls="orte-liste">Laufen</button>
+              <button type="button" class="chip" data-sport="Fahrrad" aria-expanded="false" aria-controls="orte-liste">Fahrrad</button>
+              <button type="button" class="chip" data-sport="Fußball" aria-expanded="false" aria-controls="orte-liste">Fußball</button>
+              <button type="button" class="chip" data-sport="Tennis" aria-expanded="false" aria-controls="orte-liste">Tennis</button>
+              <button type="button" class="chip" data-sport="Padel" aria-expanded="false" aria-controls="orte-liste">Padel</button>
+              <button type="button" class="chip" data-sport="Beachvolleyball" aria-expanded="false" aria-controls="orte-liste">Beachvolleyball</button>
+            </div>
+            <div id="orte-liste" class="orte-liste" aria-live="polite"></div>
+            <noscript><p class="hinweis">Die Auswahl der Orte braucht JavaScript. Bitte aktiviere es, um sie zu sehen.</p></noscript>
+          </section>
     </section>
 
     <section class="seite seite-blau" id="studie" aria-labelledby="h-studie">

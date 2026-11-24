@@ -17,6 +17,22 @@
         ],
         "createdAt": "2026-11-19T19:44:01.807Z",
         "reason": "Playwright-Messung 390px und 1280px: .prose hat 22px bzw. 44px Innenabstand links und rechts, Kinder sitzen exakt dort; Detector-Fehlalarm, Agent-Messung, nicht vom Nutzer bestätigt"
+      },
+      {
+        "rule": "kicker-above-heading",
+        "value": "*",
+        "files": [
+          "guide.html"
+        ],
+        "createdAt": "2026-11-24T06:07:01.812Z"
+      },
+      {
+        "rule": "kicker-above-heading",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-24T06:09:45.418Z"
       }
     ]
   }

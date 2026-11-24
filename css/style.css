@@ -253,6 +253,19 @@ h2 {
   html { scroll-behavior: smooth; }
 }
 
+/* Guide-Abschnitt auf der Startseite */
+.guide-seite {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 64px 20px;
+  scroll-snap-align: start;
+}
+@media (min-width: 1160px) { .guide-seite { padding-inline: calc((100% - 1080px) / 2); } }
+@media (max-width: 760px) { .guide-seite { display: none; } }
+.guide-seite h2 { font-size: clamp(2.2rem, 6vw, 4rem); margin: 0; line-height: 1; letter-spacing: -0.035em; font-weight: 800; text-transform: uppercase; }
+.guide-seite .guide-kopf { padding: 0 0 32px; }
+.orte h3 { margin: 0 0 6px; font-size: 1.25rem; font-weight: 700; }
+
 /* Guide-Seite */
 .guide-kopf { padding: 48px 0 32px; }
 .tag {
@@ -284,7 +297,6 @@ h2 {
 .karte-titel { margin: 0 0 8px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 .karte p { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
 .orte { padding: 72px 0 80px; }
-.orte h2 { margin: 0 0 6px; font-size: 1.25rem; font-weight: 700; }
 .orte-sub { margin: 0 0 16px; font-size: 0.95rem; color: var(--ink-soft); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
