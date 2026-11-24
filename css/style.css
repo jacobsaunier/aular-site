@@ -433,3 +433,7 @@ a.step:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
   .guide-seite .guide-sub { white-space: normal; }
   .guide-seite .karte { padding: 18px 20px; }
 }
+
+.quellen { list-style: none; margin: 0; padding: 0; }
+.quellen a, .studie-frage a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); }
+.studie-seite p.studie-frage { margin-top: 12px; color: var(--ink); }
