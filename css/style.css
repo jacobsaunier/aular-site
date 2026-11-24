@@ -221,7 +221,7 @@ h2 {
 .seite {
   min-height: 100vh;
   min-height: 100svh;
-  padding: 0;
+  padding: 64px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -240,6 +240,9 @@ h2 {
   text-transform: uppercase;
 }
 .seite p { margin: 0; max-width: 28em; font-size: 1.5rem; line-height: 1.4; color: var(--ink-soft); }
+@media (min-width: 1160px) {
+  .seite { padding-inline: calc((100% - 1080px) / 2); }
+}
 @media (min-width: 761px) {
   html { scroll-snap-type: y proximity; }
   .site-header { scroll-snap-align: start; }
